@@ -9,6 +9,7 @@
 Ejemplos de URL:
 
 http://localhost:8888/{nombre_archivo}/{profile}/{label}
+
 http://localhost:8888/app01/dev,qa/master
 
 
@@ -23,6 +24,21 @@ Los recursos se parametrizan mediante tres variables:
 References:
 - [spring_cloud_config_server](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_spring_cloud_config_server)
 - [application-properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+
+## Configuracion
+
+```java
+
+spring.application.name = configserver
+server.port=8888
+spring.cloud.config.server.git.uri = file:///C:/TEMP/config-server-data
+spring.cloud.config.server.git.default-label=master
+
+```
+
+Muestro una imagen de la carpeta con el cotenido:
+
+![](docs/2023-02-05-09-57-02.png)
 
 ## Compilacion
 
@@ -99,7 +115,7 @@ b) Agregar **spring-cloud-starter-bootstrap** esta dependencia al pom
 </dependency>
 ```
 
-Probar
+### Encriptar datos
 
 ```sh
 curl localhost:8888/encrypt -d 'dato' 
@@ -107,3 +123,9 @@ curl localhost:8888/encrypt -d 'dato'
 curl localhost:8888/decrypt -d '122XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXas' 
 
 ```
+
+### Probar
+
+Se debe esperar una salida similar a:
+![](docs/2023-02-05-09-54-54.png)
+![](docs/2023-02-05-09-55-57.png)
