@@ -27,7 +27,7 @@ References:
 
 ## Configuracion
 
-```java
+```properties
 
 spring.application.name = configserver
 server.port=8888
@@ -36,7 +36,13 @@ spring.cloud.config.server.git.default-label=master
 
 ```
 
-Muestro una imagen de la carpeta con el cotenido:
+Ejemplo con bitbucket.org
+
+```properties
+spring.cloud.config.server.git.uri = https://bitbucket.org/cesarortizp/configserver-data-example.git
+```
+
+Muestro una imagen de la carpeta con el contenido:
 
 ![](docs/2023-02-05-09-57-02.png)
 
