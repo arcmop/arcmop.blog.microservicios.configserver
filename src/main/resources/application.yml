@@ -1,0 +1,18 @@
+# HTTP Server
+server:
+  port: 8888
+
+spring:
+  application:
+    name: configserver 
+
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri:  file:///C:/TEMP/config-server-data
+          default-label: master
+  profiles:
+    active: dev

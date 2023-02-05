@@ -1,0 +1,6 @@
+encrypt:
+  keyStore:
+    location: ${KEYSTORE_DB}
+    alias: ${KEYSTORE_ALIAS}
+    password: ${KEYSTORE_PWD}
+    secret: ${KEYSTORE_PWD}
