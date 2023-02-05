@@ -12,7 +12,7 @@ spring:
     config:
       server:
         git:
-          uri:  file:///C:/TEMP/config-server-data
+          uri:  ${GITREPOLOCATION}
           default-label: master
   profiles:
     active: dev
